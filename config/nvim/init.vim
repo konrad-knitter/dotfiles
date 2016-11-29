@@ -42,3 +42,6 @@ endif
 
 set ruler
 set relativenumber
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete

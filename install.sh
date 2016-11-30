@@ -2,6 +2,8 @@
 
 # Overpower protector
 
+set shell=bash
+
 if [ "$(whoami)" == 'root' ] ; then
    echo "You should not me with root access!"
    exit 1
@@ -21,10 +23,25 @@ else
     exit 1
 fi     
 
+echo "VIM Settings"
+
+if [ -e $HOME/.vimrc ]; then
+    echo "${HOME}/.vimrc already exists... Skipping."
+else
+    ln -sv $DIR/vim $HOME/.vim
+fi
+
+if [ -e $HOME/.vim ]; then
+    echo "${HOME}/.vim already exists... Skipping."
+else
+    ln -sv $DIR/vim $HOME/.vim
+fi
+
 echo "System Settings"
 
 if [ ! -d $HOME/.config ]; then
     echo "Creating ~/.config"
+    
     mkdir -p $HOME/.config
 fi
 

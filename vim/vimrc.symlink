@@ -36,6 +36,8 @@ set magic                   " Set magic on, for regex
 set showmatch               " show matching braces
 set mat=2                   " how many tenths of a second to blink
 
+set laststatus=2
+
 " error bells
 set noerrorbells
 set visualbell

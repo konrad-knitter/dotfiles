@@ -12,7 +12,7 @@ set list
 set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 set showbreak=↪
 
-syntax on
+syntax enable
 
 " Formatting
 set autoindent              " Auto-indent new lines
@@ -20,7 +20,9 @@ set expandtab               " Use spaces instead of tabs
 set shiftwidth=4            " Number of auto-indent spaces
 set smartindent             " Enable smart-indent
 set smarttab                " Enable smart-tabs
+set tabstop=4               " Number of spaces per Tab
 set softtabstop=4           " Number of spaces per Tab
+set cursorline              " Highlight current line
 
 " Searching
 set ignorecase              " case insensitive searching
@@ -40,6 +42,8 @@ set visualbell
 set t_vb=
 set tm=500
 
+set wildmenu
+
 if has('mouse')
     set mouse=a
 endif
@@ -53,5 +57,7 @@ syntax on
 set background=dark
 colorscheme distinguished
 
+filetype indent on
 filetype plugin on
+
 set omnifunc=syntaxcomplete#Complete
